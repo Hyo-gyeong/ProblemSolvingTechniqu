@@ -1,4 +1,4 @@
-//커뮤ㅠ터학과 20190975 신효경
+//터학과 20190975 신효경
 //tic-tac-toe
 /*#include <stdio.h>
 int win(char b[][3], int c, int r)
