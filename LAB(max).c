@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int max1(int list[], int low, int high)//¹İº¹
+int max1(int list[], int low, int high)//ë°˜ë³µ
 {
 	int i;
 	int max;
@@ -16,7 +16,7 @@ int max1(int list[], int low, int high)//¹İº¹
 		return max;
 	}
 }
-int max2(int list[], int low, int high)//Àç±Í
+int max2(int list[], int low, int high)//ì¬ê·€
 {
 	int n1, n2;
 	int mid;
@@ -26,24 +26,26 @@ int max2(int list[], int low, int high)//Àç±Í
 
 	mid = (low + high) / 2;
 
-	n1 = max2(list, low, mid);//¹İÀÇ ¿ŞÂÊ¿¡¼­ ÃÖ´ëÃ£±â
-	n2 = max2(list, mid+1, high);//¹İÀÇ ¿À¸¥ÂÊ¿¡¼­ ÃÖ´ëÃ£±â
+	n1 = max2(list, low, mid);//ë°˜ì˜ ì™¼ìª½ì—ì„œ ìµœëŒ€ì°¾ê¸°
+	n2 = max2(list, mid+1, high);//ë°˜ì˜ ì˜¤ë¥¸ìª½ì—ì„œ ìµœëŒ€ì°¾ê¸°
 
-	if (n1 > n2)
-		return n1;
-	else
-		return n2;
+	//if (n1 > n2)
+	//	return n1;
+	//else
+	//	return n2;
+	
+	return n1 >= n2 ? n1 : n2; //ë” ê°„ê²°
 }
 int main(void)
 {
 	int list[] = {10, 20, 100, 4, 5, 45, 3, 99, 11, 22};
 
-	printf("°¡ÀåÅ«¼ö´Â%d\n", max1(list, 0, 9)); // 100 
-	printf("°¡ÀåÅ«¼ö´Â%d\n", max2(list, 0, 9)); // 100
+	printf("ê°€ì¥í°ìˆ˜ëŠ”%d\n", max1(list, 0, 9)); // 100 
+	printf("ê°€ì¥í°ìˆ˜ëŠ”%d\n", max2(list, 0, 9)); // 100
 
-	printf("°¡ÀåÅ«¼ö´Â%d\n", max1(list, 5, 9)); // 99 
-	printf("°¡ÀåÅ«¼ö´Â%d\n", max2(list, 5, 9)); // 99
+	printf("ê°€ì¥í°ìˆ˜ëŠ”%d\n", max1(list, 5, 9)); // 99 
+	printf("ê°€ì¥í°ìˆ˜ëŠ”%d\n", max2(list, 5, 9)); // 99
 
-	printf("°¡ÀåÅ«¼ö´Â%d\n", max1(list, 3, 6)); // 45 
-	printf("°¡ÀåÅ«¼ö´Â%d\n", max2(list, 3, 6)); // 45
+	printf("ê°€ì¥í°ìˆ˜ëŠ”%d\n", max1(list, 3, 6)); // 45 
+	printf("ê°€ì¥í°ìˆ˜ëŠ”%d\n", max2(list, 3, 6)); // 45
 }
